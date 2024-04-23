@@ -3,6 +3,9 @@ name = "biblos"
 version = "0.1.0"
 edition = "2021"
 
+[lints.rust]
+unused = "allow"
+
 [dependencies]
 
 axum = { version = "0.7.5", features = ["http2"] }
