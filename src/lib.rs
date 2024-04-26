@@ -1,10 +1,10 @@
-use settings::Settings;
+use app_state::AppState;
 
 mod api;
-mod settings;
+mod app_state;
 
 pub async fn run() -> anyhow::Result<()> {
-    let settings = Settings::load()?;
-    api::server::run(&settings).await?;
+    let app = AppState::new().await?;
+    api::server::run(&app).await?;
     Ok(())
 }
